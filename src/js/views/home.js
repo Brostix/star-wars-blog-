@@ -8,7 +8,7 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 	console.log(store.characters);
 	const cards = store.characters.map((person, index) => {
-		return <CharacterCard key={index.toString()} />;
+		return <CharacterCard key={index.toString()} name={person.name} />;
 	});
 	return <div className="text-center mt-5">{cards}</div>;
 };

@@ -4,13 +4,13 @@ import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext.js";
 
-const CharacterCard = props => {
+const CharacterCard = ({ name }) => {
 	const { store, actions } = useContext(Context);
 	return (
 		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src="holder.js/100px180" />
+			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51MD9V7hvsL.jpg" />
 			<Card.Body>
-				<Card.Title>Hola</Card.Title>
+				<Card.Title>{name}</Card.Title>
 				<Card.Text>
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
@@ -22,7 +22,6 @@ const CharacterCard = props => {
 };
 CharacterCard.propTypes = {
 	name: PropTypes.string,
-	personSpecie: PropTypes.string,
-	personBirth: PropTypes.string
+	personSpecie: PropTypes.string
 };
 export default CharacterCard;

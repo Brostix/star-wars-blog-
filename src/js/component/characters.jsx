@@ -6,16 +6,13 @@ import { CharacterCard } from "./charactercard.jsx";
 const Characters = props => {
 
     const { store, actions } = useContext(Context);
-    console.log(store, "lalalal")
-
     const cards = store.people.map((person, index) => {
-        return (<CharacterCard key={index.toString()} />)
+        return (<CharacterCard key={index.toString()} name={person.name} />)
     });
     return cards;
 };
-export default CharacterCard;
+export default Characters;
 
-//   name={person.name} personBirth={person.birth_year}
 
 
 
