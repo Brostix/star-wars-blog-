@@ -14,8 +14,12 @@ const CharacterCard = ({ name }) => {
 				<Card.Text>
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
-				<Button variant="primary">Go somewhere</Button>
-				<Button variant="primary">Go somewhere</Button>
+				<Button className={"informations"} variant="success">
+					More informations
+				</Button>
+				<Button className={"favourites"} variant="danger">
+					add to favourites
+				</Button>
 			</Card.Body>
 		</Card>
 	);
