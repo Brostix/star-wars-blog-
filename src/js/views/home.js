@@ -6,19 +6,21 @@ import MyCard from "../component/mycard.jsx";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-	const [vehicleslist, setVehicleList] = useState("");
+	const [vehicleslist, setVehicleList] = useState([]);
 
 	console.log("HOME", store.vehicles);
 
 	useEffect(
 		() => {
-			setVehicleList(
-				store.vehicles.map((element, index) => {
-					return <MyCard key={index.toString()} name={element.name} />;
-				})
-			);
+			if (store.vehicles) {
+				setVehicleList(
+					store.vehicles.map((element, index) => {
+						return <MyCard key={index.toString()} name={element.name} />;
+					})
+				);
+			}
 		},
-		[vehicleslist]
+		[store.vehicles]
 	);
 
 	return <div>{vehicleslist}</div>;
