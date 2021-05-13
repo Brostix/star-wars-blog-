@@ -1,0 +1,17 @@
+
+.mycard{
+    display: flex;
+    background-color: black;
+    border-color: yellow;
+    text-decoration: white;
+}
+
+.buttons{
+        display: flex;
+    justify-content: space-between;
+}
+
+.vehiclecard{
+     display: flex;
+    flex-direction: row;
+}

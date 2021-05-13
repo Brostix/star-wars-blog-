@@ -6,24 +6,27 @@ import { Link, useParams } from "react-router-dom";
 
 function MyCard(props) {
 	return (
-		<Card style={{ width: "18rem" }} className="my-3 container">
-			<Card.Img
-				className="mt-2"
-				variant="top"
+		<div className="mycard card my-3 container" style={{ width: "25rem" }}>
+			<img
+				className="card-img-top"
 				src="https://p4.wallpaperbetter.com/wallpaper/716/383/649/star-wars-x-wing-at-at-walker-at-st-walker-tie-fighter-hd-wallpaper-preview.jpg"
+				alt=""
 			/>
-			<Card.Body>
-				<Card.Title />
-				<Card.Text>
-					<h4>{props.name}</h4>
-				</Card.Text>
-				<Card className="d-flex justify-content-start">
+			<div className="card-body">
+				<h5 className="card-title text-white">{props.name}</h5>
+				<p className="card-text text-white">
+					Some quick example text to build on the card title and make up the bulk of the cards content.
+				</p>
+				<div className="buttons">
 					<Link to="/vehicledetails">
 						<button className="btn btn-dark">More Details</button>
 					</Link>
-				</Card>
-			</Card.Body>
-		</Card>
+					<button className="btn btn-dark">
+						<i className="fas fa-thumbs-up" />
+					</button>
+				</div>
+			</div>
+		</div>
 	);
 }
 
