@@ -1,21 +1,26 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
+import { Link, useParams } from "react-router-dom";
 
 function MyCard(props) {
 	return (
 		<Card style={{ width: "18rem" }} className="my-3 container">
-			<Card.Img variant="top" src="holder.js/100px180" />
+			<Card.Img
+				className="mt-2"
+				variant="top"
+				src="https://p4.wallpaperbetter.com/wallpaper/716/383/649/star-wars-x-wing-at-at-walker-at-st-walker-tie-fighter-hd-wallpaper-preview.jpg"
+			/>
 			<Card.Body>
 				<Card.Title />
 				<Card.Text>
-					Some quick example text to build on the card title and make up the bulk of the cards content.
+					<h4>{props.name}</h4>
 				</Card.Text>
-				<Card className="justify-content-center">
-					<Button variant="btn btn-dark">More details</Button>
-					<Button variant="btn btn-dark">❤</Button>
+				<Card className="d-flex justify-content-start">
+					<Link to="/vehicledetails">
+						<button className="btn btn-dark">More Details</button>
+					</Link>
 				</Card>
 			</Card.Body>
 		</Card>
