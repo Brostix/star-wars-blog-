@@ -19,7 +19,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(jsonPeople => {
 						setStore({ characters: jsonPeople.results });
 					})
-					.catch();
+					.catch(error => {
+						//error handling
+						console.log(error);
+					});
 			}
 		}
 	};
