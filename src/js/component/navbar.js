@@ -14,7 +14,11 @@ export const Navbar = () => {
 					return (
 						<li key={index.toString()}>
 							{singleFavourite}
-							<button>
+							<button
+								onClick={() => {
+									console.log("delete", index);
+									actions.deleteFavourite(index);
+								}}>
 								<i className="far fa-trash-alt" />
 							</button>
 						</li>

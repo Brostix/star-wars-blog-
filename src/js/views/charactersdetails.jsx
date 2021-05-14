@@ -26,13 +26,6 @@ export const CharactersDetails = () => {
 						<i className="fas fa-home" />
 					</button>
 				</Link>
-
-				{/* <Button
-					
-					className="favourites"
-					variant="warning">
-					😍
-				</Button> */}
 			</Card.Body>
 		</Card>
 	);

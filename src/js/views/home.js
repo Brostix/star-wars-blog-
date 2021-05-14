@@ -38,7 +38,7 @@ export const Home = () => {
 
 	return (
 		<Fragment>
-			<div className="mainDiv">{charactersList}</div>
+			<div className="maindiv2">{charactersList}</div>
 			<div className="mainDiv">{vehicleslist}</div>
 		</Fragment>
 	);

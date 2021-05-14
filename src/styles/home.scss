@@ -22,8 +22,10 @@ body{
     width: 300rem;
     height: 38rem;
     background-color: yellow;
-    min-width: none;
+    
 }
-*{
-    min-width: none;
+.mainDiv2{
+    overflow-x:scroll auto;
+     display: inline-flex; 
+     flex-direction: row;
 }
