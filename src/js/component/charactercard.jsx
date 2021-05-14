@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
 const CharacterCard = props => {
 	console.log(props.name);
 	return (
@@ -14,12 +15,14 @@ const CharacterCard = props => {
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
 
-				<Button className={"informations"} variant="success">
-					More informations
-				</Button>
+				<Link to="/charactersdetails">
+					<button className="btn btn-dark">
+						<i className="informations fas fa-info-circle" />
+					</button>
+				</Link>
 
-				<Button className={"favourites"} variant="danger">
-					add to favourites
+				<Button className={"favourites"} variant="warning">
+					😍
 				</Button>
 			</Card.Body>
 		</Card>

@@ -1,21 +1,24 @@
 import React, { useContext, useState, useEffect } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.scss";
-import Characters from "../component/characters.jsx";
 import { Context } from "../store/appContext.js";
 import CharacterCard from "../component/charactercard.jsx";
+import "../../styles/home.scss";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	const [charactersList, setCharactersList] = useState([]);
 
+	console.log("home");
+
 	useEffect(
 		() => {
-			setCharactersList(
-				store.characters.map((person, index) => {
-					return <CharacterCard key={index.toString()} name={person.name} />;
-				})
-			);
+			if (store.characters) {
+				console.log(store);
+				setCharactersList(
+					store.characters.map((person, index) => {
+						return <CharacterCard key={index.toString()} name={person.name} />;
+					})
+				);
+			}
 		},
 		[store.characters]
 	);
