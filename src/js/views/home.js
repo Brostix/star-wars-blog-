@@ -38,9 +38,8 @@ export const Home = () => {
 
 	return (
 		<Fragment>
-			{" "}
-			<div className="text-center mt-5">{charactersList}</div>
-			<div>{vehicleslist}</div>
+			<div className="mainDiv">{charactersList}</div>
+			<div className="mainDiv">{vehicleslist}</div>
 		</Fragment>
 	);
 };
