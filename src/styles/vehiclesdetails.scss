@@ -1,9 +1,10 @@
-
 .mycard{
     display: flex;
+    border-color:black
+    
+}
+.h-100{
     background-color: black;
-    border-color: yellow;
-    text-decoration: white;
 }
 
 .buttons{
@@ -14,4 +15,12 @@
 .vehiclecard{
      display: flex;
     flex-direction: row;
+}
+
+.footer{
+    background-color: black;
+}
+
+.navbar{
+    background-color: white;
 }

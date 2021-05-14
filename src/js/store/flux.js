@@ -4,7 +4,8 @@ import react from "react";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			vehicles: []
+			vehicles: [],
+			favorites: []
 		},
 
 		actions: {
@@ -27,7 +28,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(function(error) {
 						"Looks like there was a problem! ", error;
 					});
+			},
+
+			//se crea ser favorites porque es mi funcion de guardado en el store de flux en donde le digo
+			//                          \/-- funcion de guardado con los 3 puntos que es un spread operator que saca uno a uno los elementos y le decimos que los meta en favorites, cada elemento
+			//setStore({favorites: [...getStore().favorites, element] })
+			//             /\--caja donde se esta guardando los elementos en el store de mi >>flux<<
+			setFavorites: element => {
+				console.log("este es set favorites", setFavorites);
+				setStore({ favorites: [...getStore().favorites, element] });
 			}
+
 			// // Use getActions to call a function within a fuction
 			// exampleFunction: () => {
 			//     getActions().changeColor(0, "green");

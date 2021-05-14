@@ -8,7 +8,7 @@ export const VehicleDetails = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="card my-3 container" style={{ width: "25rem" }}>
+		<div className="mycard card my-3 container" style={{ width: "25rem" }}>
 			<img
 				className="card-img-top my-3 container"
 				src="https://www.10wallpaper.com/wallpaper/1366x768/1512/Star_wars_fighter-PC_Game_HD_Wallpapers_1366x768.jpg"
