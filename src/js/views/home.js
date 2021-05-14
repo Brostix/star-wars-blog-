@@ -1,12 +1,13 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, Fragment } from "react";
 import { Context } from "../store/appContext.js";
 import CharacterCard from "../component/charactercard.jsx";
 import "../../styles/home.scss";
+import MyCard from "../component/mycard.jsx";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	const [charactersList, setCharactersList] = useState([]);
-
+	const [vehicleslist, setVehicleList] = useState([]);
 	console.log("home");
 
 	useEffect(
@@ -22,6 +23,24 @@ export const Home = () => {
 		},
 		[store.characters]
 	);
+	useEffect(
+		() => {
+			if (store.vehicles) {
+				setVehicleList(
+					store.vehicles.map((element, index) => {
+						return <MyCard key={index.toString()} name={element.name} />;
+					})
+				);
+			}
+		},
+		[store.vehicles]
+	);
 
-	return <div className="text-center mt-5">{charactersList}</div>;
+	return (
+		<Fragment>
+			{" "}
+			<div className="text-center mt-5">{charactersList}</div>
+			<div>{vehicleslist}</div>
+		</Fragment>
+	);
 };
