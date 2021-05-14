@@ -11,7 +11,10 @@ export const CharactersDetails = () => {
 
 	return (
 		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51MD9V7hvsL.jpg" />
+			<Card.Img
+				variant="top"
+				src="https://cdn.alfabetajuega.com/wp-content/uploads/2020/10/baby-yoda-tapabocas-780x405.jpg"
+			/>
 			<Card.Body>
 				<Card.Title>CHARACTER NAME</Card.Title>
 				<Card.Text>
@@ -24,9 +27,12 @@ export const CharactersDetails = () => {
 					</button>
 				</Link>
 
-				<Button className="favourites" variant="warning">
+				{/* <Button
+					
+					className="favourites"
+					variant="warning">
 					😍
-				</Button>
+				</Button> */}
 			</Card.Body>
 		</Card>
 	);

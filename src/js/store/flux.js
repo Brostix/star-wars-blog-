@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters: [],
-			vehicles: []
+			vehicles: [],
+			favourites: []
 		},
 
 		actions: {
@@ -23,6 +24,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 						//error handling
 						console.log(error);
 					});
+			},
+			setFavourite: addFavourite => {
+				setStore({ favourites: [...getStore().favourites, addFavourite] });
 			}
 		}
 	};

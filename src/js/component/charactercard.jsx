@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
-
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 const CharacterCard = props => {
-	console.log(props.name);
+	const { store, actions } = useContext(Context);
+
 	return (
 		<Card style={{ width: "18rem" }}>
 			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51MD9V7hvsL.jpg" />
@@ -21,7 +22,12 @@ const CharacterCard = props => {
 					</button>
 				</Link>
 
-				<Button className={"favourites"} variant="warning">
+				<Button
+					onClick={() => {
+						actions.setFavourite(props.name);
+					}}
+					className={"favourites"}
+					variant="warning">
 					😍
 				</Button>
 			</Card.Body>
@@ -30,8 +36,7 @@ const CharacterCard = props => {
 };
 
 CharacterCard.propTypes = {
-	name: PropTypes.string,
-	personSpecie: PropTypes.string
+	name: PropTypes.string
 };
 
 export default CharacterCard;
