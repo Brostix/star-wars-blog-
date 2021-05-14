@@ -1,0 +1,29 @@
+button{
+    margin-top: 0.1rem;
+    
+}
+.favourites{
+    font-size: 2rem;
+}
+.informations{
+    font-size: 3rem;
+}
+body{
+    background-color: rgb(56, 52, 52);
+}
+.myButtons{
+    display: flex;
+}
+.mainDiv{
+    display: inline-flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    flex-direction: row;
+    width: 300rem;
+    height: 38rem;
+    background-color: yellow;
+    min-width: none;
+}
+*{
+    min-width: none;
+}
