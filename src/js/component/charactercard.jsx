@@ -22,14 +22,18 @@ const CharacterCard = props => {
 						</button>
 					</Link>
 
-					<Button
+					<button
+						type="button"
+						className="btn btn-outline-warning favourites"
 						onClick={() => {
 							actions.setFavourite(props.name);
-						}}
-						className={"favourites"}
-						variant="warning">
-						😍
-					</Button>
+						}}>
+						{store.favourites.includes(props.name) ? (
+							<i className="fas fa-heart" />
+						) : (
+							<i className="far fa-heart" />
+						)}
+					</button>
 				</div>
 			</Card.Body>
 		</Card>

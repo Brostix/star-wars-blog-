@@ -24,7 +24,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			setFavourite: addFavourite => {
-				setStore({ favourites: [...getStore().favourites, addFavourite] });
+				if (!getStore().favourites.includes(addFavourite)) {
+					setStore({ favourites: [...getStore().favourites, addFavourite] });
+				}
 			},
 
 			getVehicles: () => {
