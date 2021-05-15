@@ -9,30 +9,37 @@ function MyCard(props) {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="mycard card my-3 container" style={{ width: "25rem" }}>
-			<img
-				className="card-img-top my-3 container"
+		<div className="container my-3" style={{ width: "18rem" }}>
+			<Card.Img
+				variant="top"
 				src="https://p4.wallpaperbetter.com/wallpaper/716/383/649/star-wars-x-wing-at-at-walker-at-st-walker-tie-fighter-hd-wallpaper-preview.jpg"
-				alt=""
 			/>
-			<div className="card-body">
-				<h5 className="card-title">{props.name}</h5>
-				<p className="card-text">
+			<Card.Body>
+				<Card.Title>{props.name}</Card.Title>
+				<Card.Text>
 					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</p>
-				<div className="buttons">
+				</Card.Text>
+				<div className="myButtons">
 					<Link to="/vehicledetails">
-						<button className="btn btn-dark">More Details</button>
+						<button className="btn btn-dark">
+							<i className="informations fas fa-info-circle" />
+						</button>
 					</Link>
+
 					<button
-						className="btn btn-dark"
-						onClick={event => {
-							actions.setFavorites;
+						type="button"
+						className="btn btn-outline-warning favourites"
+						onClick={() => {
+							actions.setFavourite(props.name);
 						}}>
-						<i className="fas fa-thumbs-up" />
+						{store.favourites.includes(props.name) ? (
+							<i className="fas fa-heart" />
+						) : (
+							<i className="far fa-heart" />
+						)}
 					</button>
 				</div>
-			</div>
+			</Card.Body>
 		</div>
 	);
 }

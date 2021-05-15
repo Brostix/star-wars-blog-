@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { Context } from "../store/appContext";
+import "../../styles/charactersdetails.scss";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	const [myList, setMyList] = useState([]);
@@ -12,14 +13,15 @@ export const Navbar = () => {
 				store.favourites.map((singleFavourite, index) => {
 					console.log(singleFavourite, "marittiello");
 					return (
-						<li key={index.toString()}>
+						<li className="string-favorite" key={index.toString()}>
 							{singleFavourite}
 							<button
+								className="button-delete"
 								onClick={() => {
 									console.log("delete", index);
 									actions.deleteFavourite(index);
 								}}>
-								<i className="far fa-trash-alt" />
+								<i className="fab fa-galactic-republic" />
 							</button>
 						</li>
 					);
@@ -36,12 +38,12 @@ export const Navbar = () => {
 			</Link>
 
 			<Dropdown>
-				<Dropdown.Toggle variant="success" id="dropdown-basic">
-					Dropdown Button
+				<Dropdown.Toggle variant="dark" id="dropdown-basic">
+					<i className="fab fa-jedi-order" />
 				</Dropdown.Toggle>
 
 				<Dropdown.Menu>
-					<Dropdown.Item href="#/action-1">
+					<Dropdown.Item id="dropdown-favorite" href="#/action-1">
 						<ul>{myList}</ul>
 					</Dropdown.Item>
 				</Dropdown.Menu>

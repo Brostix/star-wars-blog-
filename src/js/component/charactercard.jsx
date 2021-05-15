@@ -8,7 +8,7 @@ const CharacterCard = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<Card className="container my-3" style={{ width: "18rem" }}>
+		<div className="container my-3" style={{ width: "18rem" }}>
 			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51MD9V7hvsL.jpg" />
 			<Card.Body>
 				<Card.Title>{props.name}</Card.Title>
@@ -36,7 +36,7 @@ const CharacterCard = props => {
 					</button>
 				</div>
 			</Card.Body>
-		</Card>
+		</div>
 	);
 };
 
