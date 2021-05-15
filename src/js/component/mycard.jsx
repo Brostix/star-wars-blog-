@@ -11,12 +11,13 @@ function MyCard(props) {
 	return (
 		<div className="container my-3" style={{ width: "18rem" }}>
 			<Card.Img
+				className="imgcss"
 				variant="top"
 				src="https://p4.wallpaperbetter.com/wallpaper/716/383/649/star-wars-x-wing-at-at-walker-at-st-walker-tie-fighter-hd-wallpaper-preview.jpg"
 			/>
-			<Card.Body>
+			<Card.Body className="cardtext">
 				<Card.Title>{props.name}</Card.Title>
-				<Card.Text>
+				<Card.Text classhName="">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
 				<div className="myButtons">
@@ -28,7 +29,7 @@ function MyCard(props) {
 
 					<button
 						type="button"
-						className="btn btn-outline-warning favourites"
+						className="btn btn-outline-dark favourites"
 						onClick={() => {
 							actions.setFavourite(props.name);
 						}}>
