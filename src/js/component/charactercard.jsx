@@ -20,7 +20,7 @@ const CharacterCard = props => {
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
 				<div className="myButtons">
-					<Link to="/charactersdetails">
+					<Link to={"/charactersdetails/".concat(props.name)}>
 						<button className="btn btn-dark">
 							<i className="informations fas fa-info-circle" />
 						</button>

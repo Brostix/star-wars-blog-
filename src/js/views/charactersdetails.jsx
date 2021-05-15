@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
@@ -8,6 +8,25 @@ import "../../styles/charactersdetails.scss";
 
 export const CharactersDetails = () => {
 	const { store, actions } = useContext(Context);
+	const [allDetails, setAllDetails] = useState({});
+	const DETAILS = useParams();
+
+	useEffect(() => {
+		console.log(DETAILS);
+		let myDetail = store.characters.find(character => character.name == DETAILS.name);
+		console.log(myDetail);
+		actions.getDetails(myDetail.url);
+		console.log(store.details);
+	}, []);
+
+	useEffect(
+		() => {
+			if (store.details) {
+				setAllDetails(store.details);
+			}
+		},
+		[store.details]
+	);
 
 	return (
 		<Card id="my-details" style={{ width: "18rem" }}>
@@ -17,9 +36,7 @@ export const CharactersDetails = () => {
 			/>
 			<Card.Body>
 				<Card.Title>name</Card.Title>
-				<Card.Text>
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</Card.Text>
+				<Card.Text>{allDetails.description}</Card.Text>
 
 				<Link to="/">
 					<button className="btn btn-dark">

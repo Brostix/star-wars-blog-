@@ -3,12 +3,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			characters: [],
 			vehicles: [],
-			favourites: []
+			favourites: [],
+			urlCharacter: "https://www.swapi.tech/api/people",
+			details: []
 		},
 
 		actions: {
 			getCharacters: () => {
-				fetch("https://www.swapi.tech/api/people")
+				fetch(getStore().urlCharacter)
 					.then(response => {
 						if (!response.ok) {
 							throw new Error("I can't load People!");
@@ -16,7 +18,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return response.json();
 					})
 					.then(jsonPeople => {
-						setStore({ characters: jsonPeople.results });
+						setStore({ characters: [...getStore().characters, ...jsonPeople.results] });
+						if (jsonPeople.next) {
+							setStore({ urlCharacter: jsonPeople.next });
+							getActions().getCharacters();
+						}
 					})
 					.catch(error => {
 						//error handling
@@ -47,6 +53,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			deleteFavourite: indexToDelete => {
 				setStore({ favourites: getStore().favourites.filter((_, index) => index !== indexToDelete) });
+			},
+			getDetails: url => {
+				fetch(url)
+					.then(response => {
+						if (!response.ok) {
+							throw new Error("I can't load People!");
+						}
+						return response.json();
+					})
+					.then(jsonDetails => {
+						setStore({ details: jsonDetails.result });
+					})
+					.catch(error => {
+						//error handling
+						console.log(error);
+					});
 			}
 		}
 	};
