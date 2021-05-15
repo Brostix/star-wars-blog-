@@ -1,26 +1,57 @@
-.mycard{
-    display: flex;
-    border-color:black
-    
-}
-.h-100{
+
+
+
+.cardtextdetails{
+    padding: 4px;
+    margin-top: 1rem;
     background-color: black;
+    border-radius: 1rem;
+    color: white;
+}
+
+body {
+    margin-bottom: 5rem;
+    padding-top: 3rem;
+    background-image: url('https://wallpaperforu.com/wp-content/uploads/2020/12/black-wallpaper-20121914145746.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+.cardtext{
+    margin-top: 1rem;
+    background-color: black;
+    border-radius: 2rem;
+    color: white;
+}
+.imgcss{
+    margin-top: 1rem;
+    border-radius: 1rem;
 }
 
 .buttons{
         display: flex;
-    justify-content: space-between;
+       justify-content: space-between;
 }
 
 .vehiclecard{
      display: flex;
-    flex-direction: row;
+     flex-direction: row;
 }
 
 .footer{
     background-color: black;
+    bottom: 0;
+    position: relative;
+    width: 100%;
 }
 
 .navbar{
     background-color: white;
+}
+#my-details{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    position: static;
 }

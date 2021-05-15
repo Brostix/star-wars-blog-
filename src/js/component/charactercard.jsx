@@ -9,8 +9,12 @@ const CharacterCard = props => {
 
 	return (
 		<div className="container my-3" style={{ width: "18rem" }}>
-			<Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/51MD9V7hvsL.jpg" />
-			<Card.Body>
+			<Card.Img
+				className="imgcss"
+				variant="top"
+				src="https://images-na.ssl-images-amazon.com/images/I/51MD9V7hvsL.jpg"
+			/>
+			<Card.Body className="cardtext">
 				<Card.Title>{props.name}</Card.Title>
 				<Card.Text>
 					Some quick example text to build on the card title and make up the bulk of the cards content.
@@ -24,7 +28,8 @@ const CharacterCard = props => {
 
 					<button
 						type="button"
-						className="btn btn-outline-warning favourites"
+						id="favorite-button"
+						className="btn btn-outline-dark favourites"
 						onClick={() => {
 							actions.setFavourite(props.name);
 						}}>

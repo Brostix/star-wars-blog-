@@ -8,22 +8,37 @@ button{
 .informations{
     font-size: 3rem;
 }
+.navbar{
+    position: fixed;
+    top:0;
+    width: 100%;
+}
 
 .myButtons{
     display: flex;
+    justify-content: space-evenly;
+}
+.mainDiv::-webkit-scrollbar {
+  display: none;
 }
 .mainDiv{
     display: inline-flex;
     flex-wrap: nowrap;
-    overflow: scroll;
     flex-direction: row;
-    
-    background-color: rgba(116, 116, 108, 0.363)
+    background-color: none;
 }
+
 .container{
-    background-color: rgb(216, 214, 214);
+    background-color: none;
     width: 15rem;
-    border: solid black;
     margin: 2rem;
     border-radius: 1rem;
+}
+h1{
+    color:rgb(4, 199, 4);
+    margin-top: 8rem;
+    font-family: 'Monoton', cursive;
+}
+#favorite-button{
+    color:white;
 }

@@ -10,13 +10,13 @@ export const CharactersDetails = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<Card style={{ width: "18rem" }}>
+		<Card id="my-details" style={{ width: "18rem" }}>
 			<Card.Img
 				variant="top"
 				src="https://cdn.alfabetajuega.com/wp-content/uploads/2020/10/baby-yoda-tapabocas-780x405.jpg"
 			/>
 			<Card.Body>
-				<Card.Title>CHARACTER NAME</Card.Title>
+				<Card.Title>name</Card.Title>
 				<Card.Text>
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
@@ -30,6 +30,7 @@ export const CharactersDetails = () => {
 		</Card>
 	);
 };
+
 //---------------------------------------
 // <Card style={{ width: "18rem" }} className="my-3 container">
 // 	<Card.Img

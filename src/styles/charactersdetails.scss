@@ -1,5 +1,5 @@
 .favourites:hover{
-    background-color: red;
+    background-color: rgba(26, 26, 26, 0.692);
 }
 .favourites{
     margin-left:6rem;
@@ -15,4 +15,18 @@
 .string-favorite{
     display: flex;
     justify-content: space-between;
+}
+.navbar-brand{
+    width: 14rem;
+    margin-left: 31rem;
+}
+#navbar{
+    background-color:green;
+}
+		
+#my-details{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    position: static;
 }
