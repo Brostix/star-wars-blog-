@@ -28,6 +28,7 @@ const CharacterCard = props => {
 
 					<button
 						type="button"
+						id="favorite-button"
 						className="btn btn-outline-dark favourites"
 						onClick={() => {
 							actions.setFavourite(props.name);
