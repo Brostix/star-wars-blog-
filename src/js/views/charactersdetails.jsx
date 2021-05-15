@@ -10,7 +10,7 @@ export const CharactersDetails = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<Card style={{ width: "18rem" }}>
+		<Card id="my-details" style={{ width: "18rem" }}>
 			<Card.Img
 				variant="top"
 				src="https://cdn.alfabetajuega.com/wp-content/uploads/2020/10/baby-yoda-tapabocas-780x405.jpg"

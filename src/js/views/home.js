@@ -38,7 +38,9 @@ export const Home = () => {
 
 	return (
 		<Fragment>
+			<h1>Characters</h1>
 			<div className="mainDiv">{charactersList}</div>
+			<h1>Vehicles</h1>
 			<div className="mainDiv">{vehicleslist}</div>
 		</Fragment>
 	);
