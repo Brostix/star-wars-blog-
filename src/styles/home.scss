@@ -8,9 +8,7 @@ button{
 .informations{
     font-size: 3rem;
 }
-body{
-    background-color: rgb(56, 52, 52);
-}
+
 .myButtons{
     display: flex;
 }
@@ -19,13 +17,13 @@ body{
     flex-wrap: nowrap;
     overflow: scroll;
     flex-direction: row;
-    width: 300rem;
-    height: 38rem;
-    background-color: yellow;
     
+    background-color: rgba(116, 116, 108, 0.363)
 }
-.mainDiv2{
-    overflow-x:scroll auto;
-     display: inline-flex; 
-     flex-direction: row;
+.container{
+    background-color: rgb(216, 214, 214);
+    width: 15rem;
+    border: solid black;
+    margin: 2rem;
+    border-radius: 1rem;
 }
