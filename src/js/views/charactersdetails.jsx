@@ -41,8 +41,9 @@ export const CharactersDetails = () => {
 				src="https://cdn.alfabetajuega.com/wp-content/uploads/2020/10/baby-yoda-tapabocas-780x405.jpg"
 			/>
 			<Card.Body>
-				<Card.Title>name</Card.Title>
-				<Card.Text>{allDetails.properties.mass}</Card.Text>
+				<Card.Title>NAME: {allDetails.properties.name}</Card.Title>
+				<Card.Text>GENDER: {allDetails.properties.gender}</Card.Text>
+				<Card.Text>HEIGHT: {allDetails.properties.height}</Card.Text>
 
 				<Link to="/">
 					<button className="btn btn-dark">

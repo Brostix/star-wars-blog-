@@ -4,7 +4,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			vehicles: [],
 			favourites: localStorage.getItem("favourites") ? JSON.parse(localStorage.getItem("favourites")) : [],
-
 			urlCharacter: "https://www.swapi.tech/api/people",
 			details: []
 		},
