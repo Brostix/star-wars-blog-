@@ -11,7 +11,6 @@ export const Navbar = () => {
 		() => {
 			setMyList(
 				store.favourites.map((singleFavourite, index) => {
-					console.log(singleFavourite, "marittiello");
 					return (
 						<li className="string-favorite" key={index.toString()}>
 							{singleFavourite}
@@ -47,7 +46,7 @@ export const Navbar = () => {
 
 				<Dropdown.Menu>
 					<Dropdown.Item id="dropdown-favorite" href="#/action-1">
-						<ul>{myList}</ul>
+						<div className="favoritelist">{myList}</div>
 					</Dropdown.Item>
 				</Dropdown.Menu>
 			</Dropdown>

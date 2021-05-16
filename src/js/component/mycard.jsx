@@ -17,17 +17,18 @@ function MyCard(props) {
 			/>
 			<Card.Body className="cardtext">
 				<Card.Title>{props.name}</Card.Title>
-				<Card.Text classhName="">
+				<Card.Text className="">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
 				<div className="myButtons">
-					<Link to="/vehicledetails">
+					<Link to={"/vehicledetails/".concat(props.name)}>
 						<button className="btn btn-dark">
 							<i className="informations fas fa-info-circle" />
 						</button>
 					</Link>
 
 					<button
+						id="favorite-button"
 						type="button"
 						className="btn btn-outline-dark favourites"
 						onClick={() => {
