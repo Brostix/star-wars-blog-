@@ -44,7 +44,7 @@ export const Navbar = () => {
 
 				<Dropdown.Menu>
 					<Dropdown.Item id="dropdown-favorite" href="#/action-1">
-						<ul>{myList}</ul>
+						<div className="favoritelist">{myList}</div>
 					</Dropdown.Item>
 				</Dropdown.Menu>
 			</Dropdown>

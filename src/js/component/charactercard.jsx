@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+
 const CharacterCard = props => {
 	const { store, actions } = useContext(Context);
 
