@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			characters: [],
 			vehicles: [],
-			favourites: [],
+			favourites: localStorage.getItem("favourites") ? JSON.parse(localStorage.getItem("favourites")) : [],
+
 			urlCharacter: "https://www.swapi.tech/api/people",
 			details: []
 		},
@@ -47,12 +48,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			setFavourite: addFavourite => {
-				if (!getStore().favourites.includes(addFavourite)) {
-					setStore({ favourites: [...getStore().favourites, addFavourite] });
+				const favourites = getStore().favourites;
+
+				if (!favourites.includes(addFavourite)) {
+					setStore({ favourites: [...favourites, addFavourite] });
+					localStorage.setItem("favourites", JSON.stringify(favourites));
 				}
 			},
 			deleteFavourite: indexToDelete => {
-				setStore({ favourites: getStore().favourites.filter((_, index) => index !== indexToDelete) });
+				const favourites = getStore().favourites;
+				setStore({ favourites: favourites.filter((_, index) => index !== indexToDelete) });
+				localStorage.setItem("favourites", JSON.stringify(favourites));
 			},
 			getDetails: url => {
 				fetch(url)
