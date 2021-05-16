@@ -17,7 +17,7 @@ function MyCard(props) {
 			/>
 			<Card.Body className="cardtext">
 				<Card.Title>{props.name}</Card.Title>
-				<Card.Text classhName="">
+				<Card.Text className="">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
 				<div className="myButtons">
