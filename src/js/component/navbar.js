@@ -32,9 +32,12 @@ export const Navbar = () => {
 	);
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav id="navbar" className="navbar  mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<img
+					src="https://tendencybook.com/wp-content/uploads/2019/08/star-wars-.png"
+					className="navbar-brand mb-0"
+				/>
 			</Link>
 
 			<Dropdown>

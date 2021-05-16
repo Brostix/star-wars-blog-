@@ -28,6 +28,7 @@ function MyCard(props) {
 					</Link>
 
 					<button
+						id="favorite-button"
 						type="button"
 						className="btn btn-outline-dark favourites"
 						onClick={() => {

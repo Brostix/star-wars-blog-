@@ -62,6 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log(error);
 					});
 			},
+
 			setFavourite: addFavourite => {
 				if (!getStore().favourites.includes(addFavourite)) {
 					setStore({ favourites: [...getStore().favourites, addFavourite] });

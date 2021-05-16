@@ -21,7 +21,7 @@ const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/charactersdetails" component={CharactersDetails} />
+						<Route exact path="/charactersdetails/:name" component={CharactersDetails} />
 						<Route exact path="/vehicledetails/:name" component={VehicleDetails} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
