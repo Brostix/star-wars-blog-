@@ -9,7 +9,7 @@ export const VehicleDetails = () => {
 	const VEHICLEDETAILS = useParams();
 
 	useEffect(() => {
-		if (store.details.lenght !== 0) {
+		if (store.details) {
 			let myDetail = store.vehicles.find(vehicle => vehicle.name == VEHICLEDETAILS.name);
 			localStorage.setItem("details", JSON.stringify(myDetail.url));
 			actions.getDetails(myDetail.url);
