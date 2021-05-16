@@ -3,9 +3,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			characters: [],
 			vehicles: [],
-			favourites: [],
-			details: [],
-			urlVehicles: "https://www.swapi.tech/api/vehicles"
+			favourites: localStorage.getItem("favourites") ? JSON.parse(localStorage.getItem("favourites")) : [],
+			urlCharacter: "https://www.swapi.tech/api/people",
+			urlVehicles: "https://www.swapi.tech/api/vehicles",
+			details: []
 		},
 
 		actions: {
@@ -46,6 +47,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 
+			setFavourite: addFavourite => {
+				const favourites = getStore().favourites;
+
+				if (!favourites.includes(addFavourite)) {
+					setStore({ favourites: [...favourites, addFavourite] });
+					localStorage.setItem("favourites", JSON.stringify(favourites));
+				}
+			},
+			deleteFavourite: indexToDelete => {
+				const favourites = getStore().favourites;
+				setStore({ favourites: favourites.filter((_, index) => index !== indexToDelete) });
+				localStorage.setItem("favourites", JSON.stringify(favourites));
+			},
+
 			getDetails: url => {
 				fetch(url)
 					.then(response => {
@@ -61,15 +76,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						//error handling
 						console.log(error);
 					});
-			},
-
-			setFavourite: addFavourite => {
-				if (!getStore().favourites.includes(addFavourite)) {
-					setStore({ favourites: [...getStore().favourites, addFavourite] });
-				}
-			},
-			deleteFavourite: indexToDelete => {
-				setStore({ favourites: getStore().favourites.filter((_, index) => index !== indexToDelete) });
 			}
 		}
 	};

@@ -11,7 +11,6 @@ export const Navbar = () => {
 		() => {
 			setMyList(
 				store.favourites.map((singleFavourite, index) => {
-					console.log(singleFavourite, "marittiello");
 					return (
 						<li className="string-favorite" key={index.toString()}>
 							{singleFavourite}

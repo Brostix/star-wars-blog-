@@ -12,31 +12,44 @@ export const CharactersDetails = () => {
 	const DETAILS = useParams();
 
 	useEffect(() => {
-		console.log(DETAILS);
-		let myDetail = store.characters.find(character => character.name == DETAILS.name);
-		console.log(myDetail);
-		actions.getDetails(myDetail.url);
-		console.log(store.details);
+		//---------------si quisiera utilizar la linea 18 para la navegabilidad sería (store.details.length !== 0)
+		if (store.details) {
+			let myDetail = store.characters.find(character => character.name == DETAILS.name);
+
+			localStorage.setItem("details", JSON.stringify(myDetail.url));
+
+			actions.getDetails(myDetail.url);
+		} else {
+			const url = localStorage.getItem("details");
+
+			actions.getDetails(JSON.parse(url));
+		}
 	}, []);
 
 	useEffect(
 		() => {
 			if (store.details) {
 				setAllDetails(store.details);
+				console.log(store.details, "lalalalalalalalallala");
 			}
 		},
 		[store.details]
 	);
 
-	return (
+	return allDetails.properties ? (
 		<Card id="my-details" style={{ width: "18rem" }}>
 			<Card.Img
 				variant="top"
 				src="https://cdn.alfabetajuega.com/wp-content/uploads/2020/10/baby-yoda-tapabocas-780x405.jpg"
 			/>
 			<Card.Body>
-				<Card.Title>{allDetails.name}</Card.Title>
-				<Card.Text>{allDetails.description}</Card.Text>
+				<Card.Title>NAME: {allDetails.properties.name}</Card.Title>
+				<Card.Text>GENDER: {allDetails.properties.gender}</Card.Text>
+				<Card.Text>HEIGHT: {allDetails.properties.height}</Card.Text>
+				<Card.Text>HAIR COLOR: {allDetails.properties.hair_color}</Card.Text>
+				<Card.Text>SKIN COLOR: {allDetails.properties.skin_color}</Card.Text>
+				<Card.Text>BIRTHDAY: {allDetails.properties.birth_year}</Card.Text>
+				<Card.Text>FRIKI: Yes</Card.Text>
 
 				<Link to="/">
 					<button className="btn btn-dark">
@@ -45,26 +58,7 @@ export const CharactersDetails = () => {
 				</Link>
 			</Card.Body>
 		</Card>
+	) : (
+		""
 	);
 };
-
-//---------------------------------------
-// <Card style={{ width: "18rem" }} className="my-3 container">
-// 	<Card.Img
-// 		className="mt-2"
-// 		variant="top"
-// 		src="https://images-na.ssl-images-amazon.com/images/I/51MD9V7hvsL.jpg"
-// 	/>
-// 	<Card.Body>
-// 		<Card.Title>Description </Card.Title>
-// 		<Card.Text />
-// 		<Card className="justify-content-start">
-// 			<Link to="/">
-// 				<button className="btn btn-dark" href="#" role="button">
-// 					HOME
-// 				</button>
-// 			</Link>
-// 		</Card>
-// 	</Card.Body>
-// </Card>
-//-----------------------------------------

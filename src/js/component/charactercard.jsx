@@ -17,9 +17,7 @@ const CharacterCard = props => {
 			/>
 			<Card.Body className="cardtext">
 				<Card.Title>{props.name}</Card.Title>
-				<Card.Text>
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</Card.Text>
+				<Card.Text>A person within the Star Wars universe</Card.Text>
 				<div className="myButtons">
 					<Link to={"/charactersdetails/".concat(props.name)}>
 						<button className="btn btn-dark">
