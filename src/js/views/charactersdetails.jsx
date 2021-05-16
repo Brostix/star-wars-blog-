@@ -12,7 +12,8 @@ export const CharactersDetails = () => {
 	const DETAILS = useParams();
 
 	useEffect(() => {
-		if (store.details.length !== 0) {
+		//---------------si quisiera utilizar la linea 18 para la navegabilidad sería (store.details.length !== 0)
+		if (store.details) {
 			let myDetail = store.characters.find(character => character.name == DETAILS.name);
 
 			localStorage.setItem("details", JSON.stringify(myDetail.url));
@@ -29,6 +30,7 @@ export const CharactersDetails = () => {
 		() => {
 			if (store.details) {
 				setAllDetails(store.details);
+				console.log(store.details, "lalalalalalalalallala");
 			}
 		},
 		[store.details]
@@ -44,6 +46,10 @@ export const CharactersDetails = () => {
 				<Card.Title>NAME: {allDetails.properties.name}</Card.Title>
 				<Card.Text>GENDER: {allDetails.properties.gender}</Card.Text>
 				<Card.Text>HEIGHT: {allDetails.properties.height}</Card.Text>
+				<Card.Text>HAIR COLOR: {allDetails.properties.hair_color}</Card.Text>
+				<Card.Text>SKIN COLOR: {allDetails.properties.skin_color}</Card.Text>
+				<Card.Text>BIRTHDAY: {allDetails.properties.birth_year}</Card.Text>
+				<Card.Text>FRIKI: Yes</Card.Text>
 
 				<Link to="/">
 					<button className="btn btn-dark">
