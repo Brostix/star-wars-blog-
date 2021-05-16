@@ -37,10 +37,11 @@ export const VehicleDetails = () => {
 				alt=""
 			/>
 			<div className="card-body">
-				<h5 className=" card-title">{allVehicleDetails.properties}</h5>
-
-				<p className=" card-text" />
-
+				<h5 className=" card-title">Name: {allVehicleDetails.properties.name}</h5>
+				<p className=" card-text">Vehicle class: {allVehicleDetails.properties.vehicle_class} </p>
+				<p className=" card-text">Passangers: {allVehicleDetails.properties.passengers} </p>
+				<p className=" card-text">Cost in credits: {allVehicleDetails.properties.cost_in_credits} </p>
+				<p>Some quick example text to build on the card title and make up the bulk of the cards content.</p>
 				<Link to="/">
 					<button className="btn btn-dark offset">
 						<i className="fas fa-home" />
@@ -49,6 +50,6 @@ export const VehicleDetails = () => {
 			</div>
 		</div>
 	) : (
-		""
+		[]
 	);
 };

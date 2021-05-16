@@ -7,7 +7,6 @@ import { Context } from "../store/appContext";
 
 function MyCard(props) {
 	const { store, actions } = useContext(Context);
-	const VEHICLEDETAILS = useParams();
 
 	return (
 		<div className="container my-3" style={{ width: "18rem" }}>
@@ -18,7 +17,7 @@ function MyCard(props) {
 			/>
 			<Card.Body className="cardtext">
 				<Card.Title>{props.name}</Card.Title>
-				<Card.Text classhName="">
+				<Card.Text className="">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
 				<div className="myButtons">
