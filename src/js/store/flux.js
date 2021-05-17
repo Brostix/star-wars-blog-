@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			getCharacters: () => {
-				fetch("https://www.swapi.tech/api/people")
+				fetch(getStore().urlCharacter)
 					.then(response => {
 						if (!response.ok) {
 							throw new Error("I can't load People!");
@@ -19,14 +19,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return response.json();
 					})
 					.then(jsonPeople => {
-						setStore({ characters: jsonPeople.results });
+						setStore({ characters: [...getStore().characters, ...jsonPeople.results] });
+						if (jsonPeople.next) {
+							setStore({ urlCharacter: jsonPeople.next });
+							getActions().getCharacters();
+						}
 					})
 					.catch(error => {
 						//error handling
 						console.log(error);
 					});
 			},
-
 			getVehicles: () => {
 				fetch(getStore().urlVehicles)
 					.then(function(response) {
